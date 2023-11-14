@@ -8,6 +8,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        <div class="edit"><a href="/posts/{{ $post->id }}/edit">edit</a></div>
+        <div class="good"><a href="/posts/{{ $post->id }}/edit">いいね</a></div>
         <h1 class="title">
             {{ $post->title }}
         </h1>
@@ -16,6 +18,11 @@
                 <h3>本文</h3>
                 <p>{{ $post->body }}</p>    
             </div>
+            @if($post->move_url)
+            <div>
+                <video autoplay playsinline controls src="{{ $post->move_url }}" alt="画像が読み込めない。"></video>
+            </div>
+            @endif
         </div>
         <div class="footer">
             <a href="/">戻る</a>
