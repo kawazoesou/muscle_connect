@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('title',50);
             $table->text('body');
-            $table->string('move_url');
+            $table->string('move_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
