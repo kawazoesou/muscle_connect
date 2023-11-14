@@ -42,4 +42,7 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 
 Route::put('/posts/{post}', [PostController::class, 'update']);
 
+Route::get('/posts/like/{id}',[PostController::class, 'like']);
+Route::get('/posts/unlike/{id}',[PostController::class, 'unlike']);
+
 require __DIR__.'/auth.php';

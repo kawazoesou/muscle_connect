@@ -15,6 +15,7 @@
                     <h2 class='title'>
                         <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
+                    <a>いいね数</a>{{ $post->likes->count() }}
                     <p class='body'>{{ $post->body }}</p>
                 </div>
             @endforeach
