@@ -9,7 +9,15 @@
     </head>
     <body>
         <div class="edit"><a href="/posts/{{ $post->id }}/edit">edit</a></div>
-        <div class="good"><a href="/posts/{{ $post->id }}/edit">いいね</a></div>
+        <div>
+            @if($post->is_liked_by_auth_user())
+            <a href="/posts/unlike/{{ $post->id }}]" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+            {{ $post->likes->count() }}
+            @else
+            <a href="/posts/like/{{ $post->id }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+            {{ $post->likes->count() }}
+            @endif
+        </div>
         <h1 class="title">
             {{ $post->title }}
         </h1>
