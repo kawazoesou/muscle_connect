@@ -11,7 +11,7 @@
         <div class="edit"><a href="/posts/{{ $post->id }}/edit">edit</a></div>
         <div>
             @if($post->is_liked_by_auth_user())
-            <a href="/posts/unlike/{{ $post->id }}]" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+            <a href="/posts/unlike/{{ $post->id }}]" class="btn btn-success btn-sm">いいね解除<span class="badge">{{ $post->likes->count() }}</span></a>
             {{ $post->likes->count() }}
             @else
             <a href="/posts/like/{{ $post->id }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
